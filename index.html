@@ -15,9 +15,12 @@
         <p v-on:mousemove='toaDo'> Toa do cua con chuot: {{ x }} : {{ y }} </p>
         <p v-on:mousemove='stop'> Stop here </p>
     
+
+        
+        <div class="main">
+            <input type="text" v-on:keyup='keyboard'>
+        </div>
     </div>
-
-
 
     <script>
         // tat ca du lieu truyen qua html deu la text
@@ -38,6 +41,9 @@
                 },
                 stop: function(event) {
                    event.stopPropagation();
+                },
+                keyboard: function(event) {
+                    alert('Hello');
                 }
             }
         });

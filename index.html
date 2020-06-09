@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="app">
-        <h1 v-once> {{ title }} - {{ show() }} </h1> <!-- không cập nhật lại khi dữ liệu thay đổi -->
-        <span> {{ sayHi() }} </span>
-        <a v-bind:href="link">Di toi google</a> <!-- binding data -->
-        <p v-html='test'></p>  <!-- Render HTML -->
+        <h1>Click tang so luong</h1>
+        <button v-on:click='tangGiaTri'>Click Cong Them 1</button>
+        <p>Gia tri: {{ number }}</p>
+        <p v-on:mousemove='toaDo'> Toa do cua con chuot: {{ x }} : {{ y }} </p>
     </div>
 
 
@@ -21,19 +21,17 @@
         new Vue ({
             el: '.app',
             data: {
-                title: 'My Vuejs',
-                body: 'Day la noi dung',
-                des: 'day la mo ta',
-                link: 'http://google.com',
-                test: '<a href="">get Password</a>'
+               number: 0,
+               x: 0,
+               y: 0
             },
             methods: {
-                sayHi: function() {
-                    console.log('Hello')
+                tangGiaTri: function() {
+                    this.number++;
                 },
-                show: function() {
-                    this.title = 'Title update';
-                    return this.title;
+                toaDo: function(event) {
+                    this.x = event.clientX,
+                    this.y = event.clientY
                 }
             }
         });

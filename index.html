@@ -13,7 +13,10 @@
         <button v-on:click='tangGiaTri'>Click Cong Them 1</button>
         <p>Gia tri: {{ number }}</p>
         <p v-on:mousemove='toaDo'> Toa do cua con chuot: {{ x }} : {{ y }} </p>
+        <p v-on:mousemove='stop'> Stop here </p>
+    
     </div>
+
 
 
     <script>
@@ -32,6 +35,9 @@
                 toaDo: function(event) {
                     this.x = event.clientX,
                     this.y = event.clientY
+                },
+                stop: function(event) {
+                   event.stopPropagation();
                 }
             }
         });

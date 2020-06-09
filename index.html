@@ -11,6 +11,7 @@
     <div class="app">
         <h1> {{ title }} </h1>
         <span> {{ sayHi() }} </span>
+        <a v-bind:href="link">Di toi google</a> <!-- binding data -->
     </div>
 
 
@@ -20,7 +21,8 @@
             data: {
                 title: 'My Vuejs',
                 body: 'Day la noi dung',
-                des: 'day la mo ta'
+                des: 'day la mo ta',
+                link: 'http://google.com'
             },
             methods: {
                 sayHi: function() {

@@ -15,10 +15,10 @@
         <p v-on:mousemove='toaDo'> Toa do cua con chuot: {{ x }} : {{ y }} </p>
         <p v-on:mousemove='stop'> Stop here </p>
     
-
+        <p>Gia tri: {{ number > 10 ? 'Khong hop le' : 'Co the tiep tuc' }}</p> <!-- Toan tu 3 ngoi -->
         
         <div class="main">
-            <input type="text" v-on:keyup='keyboard'>
+            <input type="text" v-on:keyup.enter='keyboard'>
         </div>
     </div>
 
